@@ -27,11 +27,11 @@ int main(int argc, char* argv[])
 			std::getline(std::cin, text);
 			// communicate with client
 			SDLNet_TCP_Send(client, text.c_str(), text.length() + 1);
-			SDLNet_TCP_Close(client);
 			//break;
 		}
 	}
 
+	SDLNet_TCP_Close(client);
 	SDLNet_TCP_Close(server);
 
 	SDLNet_Quit();
