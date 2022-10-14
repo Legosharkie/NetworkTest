@@ -14,8 +14,11 @@ int main(int argc, char* argv[])
 
 	TCPsocket client = SDLNet_TCP_Open(&ip);
 	char text[100];
-	SDLNet_TCP_Recv(client, text, 100);
-	std::cout << text << std::endl;
+	while (1)
+	{
+		SDLNet_TCP_Recv(client, text, 100);
+		std::cout << text << std::endl;
+	}
 
 	SDLNet_TCP_Close(client);
 
